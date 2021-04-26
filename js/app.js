@@ -55,33 +55,74 @@ function randomNumberGenerator(){
     num = Math.floor(Math.random() * 50)
     return num
 }
+// Shuffle array
+ const shuffle = function(array) {
+	var currentIndex = array.length;
+	var temporaryValue, randomIndex;
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
+}; 
+// Create Elements on screen
+ function makeElement(elem,text){
+    const newElement = document.createElement(elem)
+    newElement.textContent = text;
+    return newElement;
+} 
+// Grab required DOM contents
+const questionDiv = document.querySelector('#questions');
+const answerDiv1 = document.querySelector('#answer1');
+const answerDiv2 = document.querySelector('#answer2');
+const answerDiv3 = document.querySelector('#answer3');
+
 
 // Get full value of state (state and capital) then ask the question
 function pickState(){
-    // Pick random numbers to use in random state choice
+    // Pick random numbers to use in random state choice    
     let randomNum1 = randomNumberGenerator()
     let randomNum2 = randomNumberGenerator()
     let randomNum3 = randomNumberGenerator()
     // Pick a state to ask about its capital, with 2 other states as the wrong answers.
-    let questionState = states[randomNum1]
+    let rightAnswer = states[randomNum1]
     let wrongAnswer1 = states[randomNum2]
     let wrongAnswer2 = states[randomNum3]
 
-    // Add states to an array, to pick them at random
-    let statesArray = [questionState,wrongAnswer1,wrongAnswer2];
+    // Add the random states to an array, to be displayed at random below
+    let statesArray = [rightAnswer,wrongAnswer1,wrongAnswer2];
+    let shuffledStates = shuffle(statesArray)
     
+    // Present question and choices to the player
+    const currentQuestion = `What is the capital of ${rightAnswer.state}?`
+    const rightAnswerCapital = rightAnswer.capital
 
-    //Ask the question
-    let currentQuestion = `What is the capital of ${questionState.state}?`
-    let rightAnswer = questionState.capital
+    // Create Elements, attach to page
+    const askedQuestion = makeElement('p',currentQuestion)
+    questionDiv.append(askedQuestion)
 
-    // Present choices to the player at random from an array
+    const answer1 = makeElement('p',shuffledStates[0].capital)
+    answerDiv1.append(answer1)
+    const answer2 = makeElement('p',shuffledStates[1].capital)
+    answerDiv2.append(answer2)
+    const answer3 = makeElement('p',shuffledStates[2].capital)
+    answerDiv3.append(answer3)
 
-    console.log(currentQuestion);
-    console.log(wrongAnswer1.capital)
-    console.log(wrongAnswer2.capital)
-    console.log(rightAnswer);
-
-    console.log(`${rightAnswer} is the capital of ${questionState.state}`)
+ 
+    // questionDiv.append(question)
+    
+/*   console.log(currentQuestion);
+    console.log(shuffledStates[0].capital)
+    console.log(shuffledStates[1].capital)
+    console.log(shuffledStates[2].capital)
+    
+    console.log(`${rightAnswerCapital} is the capital of ${rightAnswer.state}`) */
 }
 pickState()
