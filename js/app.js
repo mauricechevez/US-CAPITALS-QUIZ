@@ -1,4 +1,4 @@
-
+// List of States
 const states = [
     {state: 'Alabama', capital:'Montomery'},
     {state: 'Alaska', capital:'Juneau'},
@@ -89,6 +89,7 @@ const questionDiv = document.querySelector('#questions');
 const answerDiv1 = document.querySelector('#answer1');
 const answerDiv2 = document.querySelector('#answer2');
 const answerDiv3 = document.querySelector('#answer3');
+const correctAnswer = document.querySelector
 
 
 // Get full value of state (state and capital) then ask the question
