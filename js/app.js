@@ -1,4 +1,4 @@
-// console.log('Hello')
+
 const states = [
     {state: 'Alabama', capital:'Montomery'},
     {state: 'Alaska', capital:'Juneau'},
@@ -57,6 +57,12 @@ function randomNumberGenerator(){
 }
 // Shuffle array
  const shuffle = function(array) {
+     /**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
 	var currentIndex = array.length;
 	var temporaryValue, randomIndex;
 	// While there remain elements to shuffle...
@@ -107,7 +113,6 @@ function pickState(){
     // Create Elements, attach to page
     const askedQuestion = makeElement('p',currentQuestion)
     questionDiv.append(askedQuestion)
-
     const answer1 = makeElement('p',shuffledStates[0].capital)
     answerDiv1.append(answer1)
     const answer2 = makeElement('p',shuffledStates[1].capital)
@@ -115,14 +120,7 @@ function pickState(){
     const answer3 = makeElement('p',shuffledStates[2].capital)
     answerDiv3.append(answer3)
 
- 
-    // questionDiv.append(question)
-    
-/*   console.log(currentQuestion);
-    console.log(shuffledStates[0].capital)
-    console.log(shuffledStates[1].capital)
-    console.log(shuffledStates[2].capital)
-    
-    console.log(`${rightAnswerCapital} is the capital of ${rightAnswer.state}`) */
+  
+    console.log(`${rightAnswerCapital} is the capital of ${rightAnswer.state}`) 
 }
 pickState()

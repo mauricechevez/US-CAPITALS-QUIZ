@@ -1,0 +1,13 @@
+body{
+    font-family: 'Barlow', sans-serif;
+}
+h1{
+    font-size: 3rem;
+}
+
+.choices{
+    border: purple 1px solid;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+}
