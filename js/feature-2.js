@@ -1,1 +1,0 @@
-console.log('Feature-2.js file being used. For testing purposes only!')

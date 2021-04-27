@@ -1,6 +1,6 @@
 // List of States
 const states = [
-    {state: 'Alabama', capital:'Montomery'},
+    {state: 'Alabama', capital:'Montgomery'},
     {state: 'Alaska', capital:'Juneau'},
     {state: 'Arizona', capital:'Phoenix'},
     {state: 'Arkansas', capital:'Little Rock'},
