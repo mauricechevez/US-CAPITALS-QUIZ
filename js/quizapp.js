@@ -69,8 +69,11 @@ let qAnswer1 = document.querySelector('#answer1')
 let qAnswer2 = document.querySelector('#answer2')
 let qAnswer3 = document.querySelector('#answer3')
 let scoreDiv = document.querySelector('#score')
+let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
-console.log(start)
+let timer;
+let score = 0;
+
 
 // helper function to create elements
 function makeElement(elem,text){
@@ -101,19 +104,53 @@ function startQuiz(){
     renderQuestion();
     // Make questions visible
     qContainer.className ='unhidden'
+    showProgress()
 }
 // Track Score
-function checkAnswer(theAnswer){
-    if (theAnswer == stateQuestions[currentQuestionIndex].answer){
-        console.log(`You're correct, sir!`)
+function checkAnswer(clickedAnswer){
+    if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
+        console.log('Correct!')
     } else {
-        console.log(`Big fail!`)
+        console.log('Incorrect')
+    }
+}
+// Countdown timer for player to choose an answer
+function showTimer(){
+
+}
+
+
+function showProgress(){
+    
+    for (let i = 0; i <=finalQuestionIndex; i++){
+        for (let i = 0 ; i <= finalQuestionIndex; i++)
+        qProgress.textContent = `${i} of ${finalQuestionIndex} questions`
     }
 }
 
-// Render the quiz, and hide the Start Button
+
+/*  ------ Event Listeners section ------ */
 start.addEventListener('click',() =>{
     startQuiz();
 })
 
+// Event Listeners for all buttons
+qAnswer1.addEventListener('click', () =>{
+    console.log('Answer1 clicked')
+    let answerValue = qAnswer1.textContent
+    console.log(answerValue)
+    checkAnswer(answerValue)
+})
 
+qAnswer2.addEventListener('click', () =>{
+    console.log('Answer2 clicked')
+    let answerValue = qAnswer2.textContent
+    console.log(answerValue)
+    checkAnswer(answerValue)
+})
+qAnswer3.addEventListener('click', () =>{
+   console.log('Answer3 clicked')
+   let answerValue = qAnswer3.textContent
+   console.log(answerValue)
+   checkAnswer()
+})

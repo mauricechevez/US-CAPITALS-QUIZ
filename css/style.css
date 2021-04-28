@@ -39,6 +39,12 @@ header{
     width: 200px;
     text-align: center;
     margin-bottom: 30px;
+    cursor: pointer;
+}
+.choices:hover{
+    color: white;
+    background: blue;
+    border:red 2px solid;
 }
 
 #questions-div{
