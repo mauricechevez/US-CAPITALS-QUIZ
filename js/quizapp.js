@@ -71,8 +71,13 @@ let qAnswer3 = document.querySelector('#answer3')
 let scoreDiv = document.querySelector('#score')
 let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
+let timerDiv = document.querySelector('#timer-div')
+
+// Required Variables
 let timer;
-let score = 0;
+let score = 0; // Items correct
+let qTimeCounter = 10; // Seconds for each question
+let count = 0 // place holder for each second that passes
 
 
 // helper function to create elements
@@ -97,6 +102,7 @@ function renderQuestion(){
     qAnswer3.append(aChoice3)
 
 }
+
 //Start Quiz function
 function startQuiz(){
     start.className = 'hidden'
@@ -104,19 +110,36 @@ function startQuiz(){
     renderQuestion();
     // Make questions visible
     qContainer.className ='unhidden'
+    // Display the timer
+    showTimer()
     showProgress()
+    timer = setInterval(showTimer,1000); // run function every second
 }
 // Track Score
 function checkAnswer(clickedAnswer){
     if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
         console.log('Correct!')
+        score++
     } else {
         console.log('Incorrect')
     }
 }
 // Countdown timer for player to choose an answer
 function showTimer(){
-
+    if (count <= qTimeCounter){
+        timerDiv.textContent = count
+        count++
+    } else {
+        count = 0
+        if (currentQuestionIndex < finalQuestionIndex){
+            // go to next question
+            currentQuestionIndex++
+            renderQuestion()
+        } else {
+            // Reached the end of the questions
+            clearInterval(timer)
+        }
+    }
 }
 
 
@@ -129,7 +152,7 @@ function showProgress(){
 }
 
 
-/*  ------ Event Listeners section ------ */
+/*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{
     startQuiz();
 })
@@ -154,3 +177,4 @@ qAnswer3.addEventListener('click', () =>{
    console.log(answerValue)
    checkAnswer()
 })
+/*  ------ End of Event Listeners section ------ */
