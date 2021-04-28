@@ -10,17 +10,17 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
+1. I created the boilerplate document, and began my work on the javascript, which includes the data that will be used as my questions and answers, as well as initial logic
 2. RESPONSE
-3. RESPONSE
+3. How randomly sort the array of objects that make up my questions and answers
 
 # Tuesday
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. The non-code logic is mostly sound, except for how I was attempting to deliver the questions and answers. 
+2. Reworked my javascript. The ability to deliver random questions and answers I believe is beyond my current skillset. The examples I found online had static questions and answers in each object, so I had to follow those examples instead. Also made my HTML and CSS to the  and provide a score to the player.
+3. Cannot figure out how to provide a score to the player/track the score. 
 
 # Wednesday
 - [x] What did you achieve yesterday?
