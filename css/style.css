@@ -61,3 +61,8 @@ header{
 #answers-container > div{
     margin-right: 10px;
 }
+
+#timer-div{
+    color:black;
+    font-size: 2rem;
+}

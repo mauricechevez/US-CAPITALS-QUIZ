@@ -110,41 +110,60 @@ function startQuiz(){
     showProgress()
     timer = setInterval(showTimer,1000); // run function every second
 }
-// Track Score
+// Check answer and track the score
 function checkAnswer(clickedAnswer){
     if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
         console.log('Correct!')
         score++
     } else {
         console.log('Incorrect')
+    } 
+    count = 0
+    if (currentQuestionIndex < finalQuestionIndex){
+        currentQuestionIndex++
+        renderQuestion()
+    } else{
+        console.log('Quiz over! Do something else')
+        clearInterval(timer)
     }
+        
 }
-// Countdown timer for player to choose an answer
+// Countdown timer for player to choose an answer. At limit, next question will appear
 function showTimer(){
     if (count <= qTimeCounter){
         timerDiv.textContent = count
         count++
-    } else {
+        changeTimerColor()
+        } else {
         count = 0
+        console.log('Took too long, next question')
         if (currentQuestionIndex < finalQuestionIndex){
             // go to next question
             currentQuestionIndex++
             renderQuestion()
         } else {
             // Reached the end of the questions
+            console.log('Quiz Over - Times up. Do something else')
             clearInterval(timer)
         }
     }
 }
 
-
-function showProgress(){
-    
-    for (let i = 0; i <=finalQuestionIndex; i++){
-        for (let i = 0 ; i <= finalQuestionIndex; i++)
-        qProgress.textContent = `${i} of ${finalQuestionIndex} questions`
+function changeTimerColor(){
+    if (count > 6){
+        timerDiv.style.color = 'red'
+    } else {
+        timerDiv.style.color = 'black'
     }
 }
+
+
+// How many questions left
+function showProgress(){
+   for (let i = 0 ; i <= finalQuestionIndex; i++){
+    qProgress.textContent = `${i} of ${finalQuestionIndex+1} questions`
+        }
+    }
 
 
 /*  ------ Start of Event Listeners section ------ */
@@ -152,7 +171,7 @@ start.addEventListener('click',() =>{
     startQuiz();
 })
 
-// Event Listeners for all buttons
+// Event Listeners for all choice buttons
 qAnswer1.addEventListener('click', () =>{
     console.log('Answer1 clicked')
     let answerValue = qAnswer1.textContent
