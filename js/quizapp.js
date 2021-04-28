@@ -92,15 +92,10 @@ function renderQuestion(){
    /* 
     start.className = 'hidden' */
     let q = stateQuestions[currentQuestionIndex]
-    let qText = makeElement('p',q.question)
-    let aChoice1 = makeElement('p',q.capital1);
-    let aChoice2 = makeElement('p',q.capital2);
-    let aChoice3 = makeElement('p',q.capital3);
-    qDiv.append(qText)
-    qAnswer1.append(aChoice1)
-    qAnswer2.append(aChoice2)
-    qAnswer3.append(aChoice3)
-
+    qDiv.innerHTML = `<p>${q.question}</p>`;
+    qAnswer1.innerHTML = `<p>${q.capital1}</p>`
+    qAnswer2.innerHTML = `<p>${q.capital2}</p>`
+    qAnswer3.innerHTML = `<p>${q.capital3}</p>`
 }
 
 //Start Quiz function
