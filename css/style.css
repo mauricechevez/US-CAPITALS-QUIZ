@@ -10,13 +10,13 @@ h1{
     font-size: 4rem;
 }
 header{
-    margin-bottom: 50px;
+    margin-bottom: 35px;
 }
 
 #start-button{
     font-size: 3rem;
     border: black solid 5px;
-    padding: 0;
+    padding: 50px;
     width: 500px;
     margin: 0 auto;
     z-index: 2;
@@ -26,10 +26,6 @@ header{
     color: white;
     background:blue;
 }
-/* #start-button--inactive{
-    display: none;
-    z-index: -1;
-} */
 
 .hidden{
     display: none;

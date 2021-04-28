@@ -101,9 +101,15 @@ function startQuiz(){
     renderQuestion();
     // Make questions visible
     qContainer.className ='unhidden'
-
 }
-// 
+// Track Score
+function checkAnswer(theAnswer){
+    if (theAnswer == stateQuestions[currentQuestionIndex].answer){
+        console.log(`You're correct, sir!`)
+    } else {
+        console.log(`Big fail!`)
+    }
+}
 
 // Render the quiz, and hide the Start Button
 start.addEventListener('click',() =>{
