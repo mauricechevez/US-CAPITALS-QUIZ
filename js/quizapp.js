@@ -1,14 +1,14 @@
 // List of questions
 const stateQuestions = [
     {question: 'What is the capital of Alabama?', 
-    capital1:'Montgomery',
+    capital1:'Boise',
     capital2:'Dover',
-    capital3:'Boise',
+    capital3:'Montgomery',
     answer:'Montgomery'
     },
     {question: 'What is the capital of Alaska?', capital1:'Montpelier', capital2:'Carson City', capital3:'Juneau', answer:'Juneau'},
-    {question: 'Arizona', capital1:'Boise', capital2:'Phoenix', capital3:'Jefferson City', answer:'Phoenix'},
-    {question: 'Arkansas', capital1:'Little Rock', capital2:'Springfield', capital3:'Jefferson City', answer:'Hartford', answer:'Little Rock'},
+    {question: 'What is the capital of Arizona', capital1:'Boise', capital2:'Phoenix', capital3:'Jefferson City', answer:'Phoenix'},
+    {question: 'What is the capital of Arkansas', capital1:'Little Rock', capital2:'Springfield', capital3:'Jefferson City', answer:'Hartford', answer:'Little Rock'},
   /*   {question: 'California', capital:'Sacramento'},
     {question: 'Colorado', capital:'Denver'},
     {question: 'Connecticut', capital:'Hartford'},
@@ -170,6 +170,6 @@ qAnswer3.addEventListener('click', () =>{
    console.log('Answer3 clicked')
    let answerValue = qAnswer3.textContent
    console.log(answerValue)
-   checkAnswer()
+   checkAnswer(answerValue)
 })
 /*  ------ End of Event Listeners section ------ */
