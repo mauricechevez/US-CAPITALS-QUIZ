@@ -78,14 +78,15 @@ let timer;
 let score = 0; // Items correct
 let qTimeCounter = 10; // Seconds for each question
 let count = 0 // place holder for each second that passes
+let questionNumber = 1
 
 
 // helper function to create elements
-function makeElement(elem,text){
+/* function makeElement(elem,text){
     const newElement = document.createElement(elem)
     newElement.textContent = text;
     return newElement;
-} 
+}  */
 
 // Question logic and writing to screen
 function renderQuestion(){
@@ -96,6 +97,7 @@ function renderQuestion(){
     qAnswer1.innerHTML = `<p>${q.capital1}</p>`
     qAnswer2.innerHTML = `<p>${q.capital2}</p>`
     qAnswer3.innerHTML = `<p>${q.capital3}</p>`
+    showProgress()
 }
 
 //Start Quiz function
@@ -106,8 +108,8 @@ function startQuiz(){
     // Make questions visible
     qContainer.className ='unhidden'
     // Display the timer
+    
     showTimer()
-    showProgress()
     timer = setInterval(showTimer,1000); // run function every second
 }
 // Check answer and track the score
@@ -115,6 +117,7 @@ function checkAnswer(clickedAnswer){
     if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
         console.log('Correct!')
         score++
+        questionNumber++
     } else {
         console.log('Incorrect')
     } 
@@ -136,6 +139,7 @@ function showTimer(){
         changeTimerColor()
         } else {
         count = 0
+        questionNumber++
         console.log('Took too long, next question')
         if (currentQuestionIndex < finalQuestionIndex){
             // go to next question
@@ -159,12 +163,9 @@ function changeTimerColor(){
 
 
 // How many questions left
-function showProgress(){
-   for (let i = 0 ; i <= finalQuestionIndex; i++){
-    qProgress.textContent = `${i} of ${finalQuestionIndex+1} questions`
-        }
-    }
-
+ function showProgress(){
+    qProgress.textContent = 'Question ' + questionNumber + ' of ' + stateQuestions.length
+ }
 
 /*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{

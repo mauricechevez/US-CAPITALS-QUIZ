@@ -9,6 +9,18 @@ body{
 h1{
     font-size: 4rem;
 }
+.container{
+    border: blue solid 10px;
+    height: 600px;
+    width: 900px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#quiz-container{
+    position: relative;
+}
+
 header{
     margin-bottom: 35px;
 }
@@ -55,9 +67,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    /* width: 600px; */
 }
+
 #answers-container > div{
     margin-right: 10px;
 }
@@ -65,4 +76,13 @@ header{
 #timer-div{
     color:black;
     font-size: 2rem;
+}
+
+#game-over{
+    font-size: 4rem;
+    position: absolute;
+    z-index: 1;
+    top:50px;
+    left:50px;
+    display: none;
 }
