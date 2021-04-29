@@ -171,6 +171,8 @@ function changeTimerColor(){
 
  function gameOverScreen(){
     gameOverDiv.style.display = "block";
+    const scorePercent = Math.round(100 * score/stateQuestions.length)
+    gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
 
  }
 
