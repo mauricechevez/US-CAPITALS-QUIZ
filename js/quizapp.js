@@ -13,7 +13,7 @@ const stateQuestions = [
     {question: 'What is the capital of Colorado?', capital1:'Lincoln', capital2:'Denver',capital3:'Augusta', answer:'Denver'},
     {question: 'What is the capital of Connecticut?', capital1:'Salem', capital2:'Harrisburg',capital3:'Hartford', answer:'Hartford'},
     {question: 'What is the capital of Delaware?', capital1:'Dover', capital2:'Helena',capital3:'Providence', answer:'Dover'},
-    {question: 'What is the capital of Florida?', capital1:'Concord', capital2:'Helena',capital3:'Tallahassee', answer:'Tallahassee'},
+    {question: 'What is the capital of Florida?', capital1:'Concord', capital2:'Saint Paul',capital3:'Tallahassee', answer:'Tallahassee'},
     {question: 'What is the capital of Georgia?', capital1:'Atlanta', capital2:'Honolulu',capital3:'Des Moines', answer:'Atlanta'},
      /*{question: 'What is the capital of Hawaii?', capital:'Honolulu'},
     {question: 'What is the capital of Idaho?', capital:'Boise'},
@@ -30,10 +30,8 @@ const stateQuestions = [
     {question: 'What is the capital of Mississippi?', capital:'Jackson'},
     {question: 'What is the capital of Missouri?', capital:'Jefferson City'},
     {question: 'What is the capital of Montana?', capital:'Helena'},
-    {question: 'What is the capital of Nebraska?', capital:'Lincoln'},
     {question: 'What is the capital of Nevada?', capital:'Carson City'},
     {question: 'What is the capital of New Hampshire?', capital:'Concord'},
-    {question: 'What is the capital of Nebraska?', capital:'Lincoln'},
     {question: 'What is the capital of New Jersey?', capital:'Trenton'},
     {question: 'What is the capital of New Mexico?', capital:'Santa Fe'},
     {question: 'What is the capital of New York?', capital:'Albany'},
@@ -81,15 +79,6 @@ let qTimeCounter = 10; // Seconds for each question
 let count = 0 // place holder for each second that passes
 let questionNumber = 1
 
-
-// helper function to create elements
-/* function makeElement(elem,text){
-    const newElement = document.createElement(elem)
-    newElement.textContent = text;
-    return newElement;
-}  */
-
-// Question logic and writing to screen
 function renderQuestion(){
    /* 
     start.className = 'hidden' */
@@ -104,11 +93,8 @@ function renderQuestion(){
 //Start Quiz function
 function startQuiz(){
     start.className = 'hidden'
-    // Call on the function Render Question to display on screen
-    renderQuestion();
-    // Make questions visible
-    qContainer.className ='unhidden'
-    // Display the timer
+    renderQuestion(); // Call on the function Render Question to display on screen
+    qContainer.className ='unhidden' // Make questions visible
     showTimer()
     timer = setInterval(showTimer,1000); // run function every second
 }
@@ -135,7 +121,7 @@ function checkAnswer(clickedAnswer){
 // Countdown timer for player to choose an answer. At limit, next question will appear
 function showTimer(){
     if (count <= qTimeCounter){
-        timerDiv.textContent = count
+        timerDiv.textContent = `${count} of 10 seconds to choose`
         count++
         changeTimerColor()   // Changes the color of font the closer it gets to 10.
         } else {
@@ -163,7 +149,6 @@ function changeTimerColor(){
     }
 }
 
-
 // How many questions left
  function showProgress(){
     qProgress.textContent = 'Question ' + questionNumber + ' of ' + stateQuestions.length
@@ -177,33 +162,33 @@ function changeTimerColor(){
     /* gameOverDiv.innerHTML = `Quiz Complete`
     gameOverDiv.innerHTML += `<br \>` */
     console.log(scorePercent)
-    if (scorePercent < 50){
-        console.log("Less than 50%")
+    if (scorePercent <= 50){
+        gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-    } else if (scorePercent >=50 && scorePercent < 60){
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+    } else if (scorePercent >=51 && scorePercent < 60){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png id='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else if (scorePercent >=60 && scorePercent < 70){
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else if (scorePercent >=70 && scorePercent < 80){
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else if (scorePercent >= 80 && scorePercent < 90){
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else if (scorePercent >=90){
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else{
         console.log('Something is broken....')

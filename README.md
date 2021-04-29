@@ -7,9 +7,25 @@ Test your knowledge of the 50 U.S State Capitals.
 Please visit the [United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/) page to play on your browser
 
 Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
+## Score scale
+| Score      | Description |
+| ----------- | ----------- |
+|Less than 50%    |     Fail   |
+|51% to 59%       | 1 Eagle     |
+|60% to 69%       | 2 Eagles    |
+|70% to 79%       | 3 Eagles     |
+|80% to 89%       | 4 Eagles     |
+|80% to 89%       | 5 Eagles     |
+
+### Eagle Pictures
+| Fail | Pass |
+| ----------- | ----------- |
+| ![Fail Picture](/img/Mighty_Eagle_sm.png)| ![Pass Picture](/img/eagle-sm_md.png)| 
+
 
 ## Start Up Screen:
 Player will click the "Start the Quiz" button to begin.
+
 ![Start Screen](/img/Start-Screen.png)
 
 # HOW TO INSTALL
@@ -19,8 +35,36 @@ Player will click the "Start the Quiz" button to begin.
 3. Open the directory in your text editor of choice to view or edit the code
 
 # HOW IT WORKS
-How the game works will go here
-Code snippets go here
+
+## Questions, Choices and Answers
+The questions are stored in an array. Each state, with the choices and answers are stored in their own objects within the array
+```javascript
+{question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',}
+```
+
+## Score Tracking
+Each time a player clicks a selection, an event listner is set to grab the textContent of the element (in this case, a DIV) and passes that value to a paramter. The following function then uses **IF** statements to check whether the textContent matches what the answer is. This same function also checks if it has reached the last object in the array of questions, then presents the player with their score.
+```javascript
+function checkAnswer(clickedAnswer){
+    if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
+        console.log('Correct!')
+        score++
+        questionNumber++
+    } else {
+        console.log('Incorrect')
+    } 
+    count = 0
+    if (currentQuestionIndex < finalQuestionIndex){
+        currentQuestionIndex++
+        renderQuestion()
+    } else{
+        console.log('Quiz over!')
+        gameOverScreen()
+        clearInterval(timer)
+    }
+        
+}
+```
 
 
 # FUTURE CONSIDERATIONS
@@ -31,8 +75,3 @@ Add difficulty levels, which would consist of subsets of the 50 states. For exam
 # PROCESS WORK
 
 ## Initial Wireframes:
-Initial Wireframes go here ( images )
-
-## Scratch Work:
-
-Scratch Work goes here
