@@ -100,8 +100,15 @@ header{
     width: 100%;
     padding: 0px 0px 115px 0px;
     background-color: rgb(255, 255, 255);
-    opacity: .95;
-
+    /* opacity: .95; */
+}
+#game-over img{
+    height: 100px;
+    width: 100;
+    object-fit: cover;
+}
+#game-over p{
+    margin:5px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -127,7 +134,11 @@ header{
         margin-bottom: 15px;
     }
     #game-over{
-        padding:0px 0px 160px 0px;
+        padding:55px 0px 205px 0px;
+    }
+    #game-over img{
+        height: 75px;
+        width: 75px;
     }
 
   }
