@@ -6,6 +6,9 @@ Test your knowledge of the 50 U.S State Capitals.
 ## Visit the Github Page
 Please visit the [United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/) page to play on your browser
 
+### Gameplayer Screenshot
+![Gameplay Screenshot](img/Gameplay_Screenshot.png)
+
 Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
 ## Score scale
 | Score      | Description |
@@ -15,7 +18,7 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 |60% to 69%       | 2 Eagles    |
 |70% to 79%       | 3 Eagles     |
 |80% to 89%       | 4 Eagles     |
-|80% to 89%       | 5 Eagles     |
+|90% to 100%       | 5 Eagles     |
 
 ### Eagle Pictures
 | Fail | Pass |
