@@ -174,12 +174,46 @@ function changeTimerColor(){
  function gameOverScreen(){
     gameOverDiv.style.display = "block";
     const scorePercent = Math.round(100 * score/stateQuestions.length)
-    gameOverDiv.innerHTML = `Quiz Complete`
-    gameOverDiv.innerHTML += `<br \>`
-    gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
-    gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    /* gameOverDiv.innerHTML = `Quiz Complete`
+    gameOverDiv.innerHTML += `<br \>` */
+    console.log(scorePercent)
+    if (scorePercent < 50){
+        console.log("Less than 50%")
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=50 && scorePercent < 60){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=60 && scorePercent < 70){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=70 && scorePercent < 80){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >= 80 && scorePercent < 90){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=90){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else{
+        console.log('Something is broken....')
+    }
+    
+    }
 
- }
+    
+
+ 
 
 /*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{
