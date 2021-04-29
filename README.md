@@ -1,13 +1,14 @@
 # Title of Game
 
-Explanation of the game that was built and the deployed link will go here.
+United States Capitals Quiz: Test your knowledge of the 50 U.S State Capitals.
 
 # HOW TO PLAY
 
-How to play the game goes here
+Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
 
 ## Start Up Screen:
-Images of the start up screen go here 
+Player will click the "Start the Quiz" button to begin.
+![Start Screen](./img/Start-Screen)
 
 # HOW TO INSTALL
 

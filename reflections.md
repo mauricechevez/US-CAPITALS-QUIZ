@@ -34,9 +34,9 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. Most JS logic complete. Questions are being tracked, countdown for each question has been programmed, and test ends successfully whether the time runs out or player goes through all the questions. Added some style changes as well.
+2. Add JS code to calculate the score, and show to the player once they're done. I'd like to also make the page responsive.
+3. Not at this time.
 
 # Friday
 - [x] What did you achieve yesterday?
