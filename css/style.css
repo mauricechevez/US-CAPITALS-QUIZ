@@ -102,15 +102,32 @@ header{
     background-color: rgb(255, 255, 255);
     opacity: .95;
 
-
-    /* font-size: 4rem;
-    font-weight: 800;
-    position: absolute;
-    z-index: 1;
-    top:8%;
-    display: none;
-    width: 100%;
-    padding: 212px 0px 200px 0px;
-    background-color: rgb(255, 255, 255);
-    opacity: .9; */
 }
+
+@media only screen and (max-width: 600px) {
+    
+    .container{
+        width:100%;
+    }
+    #start-button{
+        width:95%;
+    }
+    #answers-container{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+    }
+    #answers-container > div{
+        margin-right: 0px !important
+    }
+    .choices:last-child{
+        margin-bottom: 15px;
+    }
+    #game-over{
+        padding:0px 0px 160px 0px;
+    }
+
+  }
