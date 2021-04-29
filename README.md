@@ -83,6 +83,7 @@ qAnswer1.addEventListener('click', () =>{
 
 # FUTURE CONSIDERATIONS
 * Randomize the questions
+* Add Reset Button
 * Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
 * Add a Progress Bar
 * Add a Score on Screen
