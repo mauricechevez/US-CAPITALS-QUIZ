@@ -137,7 +137,7 @@ function showTimer(){
     if (count <= qTimeCounter){
         timerDiv.textContent = count
         count++
-        changeTimerColor()
+        changeTimerColor()   // Changes the color of font the closer it gets to 10.
         } else {
         count = 0
         questionNumber++
@@ -169,9 +169,14 @@ function changeTimerColor(){
     qProgress.textContent = 'Question ' + questionNumber + ' of ' + stateQuestions.length
  }
 
+
+ /* ------ LAST SCREEN ------ */
  function gameOverScreen(){
     gameOverDiv.style.display = "block";
     const scorePercent = Math.round(100 * score/stateQuestions.length)
+    gameOverDiv.innerHTML = `Quiz Complete`
+    gameOverDiv.innerHTML += `<br \>`
+    gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png>`
     gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
 
  }
