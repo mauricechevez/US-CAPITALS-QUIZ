@@ -20,8 +20,10 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 ### Eagle Pictures
 | Fail | Pass |
 | ----------- | ----------- |
-| ![Fail Picture](/img/Mighty_Eagle_sm.png)| ![Pass Picture](/img/eagle-sm_md.png)| 
+| ![Fail Eagle](/img/Mighty_Eagle_sm.png)| ![Pass Eagle](/img/eagle-sm_md.png)| 
 
+### Passing and Failing screenshots
+ ![Pass Screenshot](/img/Pass_Screenshot.png) ![Fail Screenshot](/img/Fail_Screenshot.png)| 
 
 ## Start Up Screen:
 Player will click the "Start the Quiz" button to begin.
@@ -65,13 +67,19 @@ function checkAnswer(clickedAnswer){
         
 }
 ```
-
+## Event Listeners
+When the player makes a selection, the value of that selection is passed up to the function above
+```javascript
+qAnswer1.addEventListener('click', () =>{
+    console.log('Answer1 clicked')
+    let answerValue = qAnswer1.textContent
+    console.log(answerValue)
+    checkAnswer(answerValue)
+})
+```
 
 # FUTURE CONSIDERATIONS
 
-Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
-
-
-# PROCESS WORK
-
-## Initial Wireframes:
+* Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
+* Add a Progress Bar
+* Add a Score on Screen
