@@ -72,6 +72,7 @@ let scoreDiv = document.querySelector('#score')
 let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
 let timerDiv = document.querySelector('#timer-div')
+let gameOverDiv = document.querySelector('#game-over')
 
 // Required Variables
 let timer;
@@ -126,6 +127,7 @@ function checkAnswer(clickedAnswer){
         renderQuestion()
     } else{
         console.log('Quiz over! Do something else')
+        gameOverScreen()
         clearInterval(timer)
     }
         
@@ -147,6 +149,7 @@ function showTimer(){
         } else {
             // Reached the end of the questions
             console.log('Quiz Over - Times up. Do something else')
+            gameOverScreen()
             clearInterval(timer)
         }
     }
@@ -164,6 +167,11 @@ function changeTimerColor(){
 // How many questions left
  function showProgress(){
     qProgress.textContent = 'Question ' + questionNumber + ' of ' + stateQuestions.length
+ }
+
+ function gameOverScreen(){
+    gameOverDiv.style.display = "block";
+
  }
 
 /*  ------ Start of Event Listeners section ------ */

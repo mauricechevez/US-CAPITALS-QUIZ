@@ -5,16 +5,22 @@
 body{
     font-family: 'Barlow', sans-serif;
     text-align: center;
+    background-color: rgba(0, 81, 255, 0.467);
 }
 h1{
     font-size: 4rem;
 }
 .container{
-    border: blue solid 10px;
+    border: red solid 2px;
+    background: white;
     height: 600px;
     width: 800px;
     position: relative;
     margin: 0 auto;
+    padding-top: 3px;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 5px 15px 1px #000000; 
+    box-shadow: 4px 5px 15px 1px #000000;
 }
 
 #quiz-container{
@@ -28,7 +34,8 @@ header{
 
 #start-button{
     font-size: 3rem;
-    border: black solid 5px;
+    border: black solid 2px;
+    border-radius: 10px;
     padding: 50px;
     width: 500px;
     margin: 0 auto;
@@ -37,7 +44,8 @@ header{
 }
 #start-button:hover{
     color: white;
-    background:blue;
+    background:rgba(0, 81, 255);
+    border-radius: 10px;
 }
 
 .hidden{
@@ -49,6 +57,7 @@ header{
 
 .choices{
     border: blue 1px solid;
+    border-radius: 10px;
     width: 200px;
     text-align: center;
     margin-bottom: 30px;
@@ -56,8 +65,9 @@ header{
 }
 .choices:hover{
     color: white;
-    background: blue;
+    background: rgb(0, 81, 255);
     border:red 2px solid;
+    border-radius: 10px;
 }
 
 #questions-div{
@@ -81,10 +91,13 @@ header{
 
 #game-over{
     font-size: 4rem;
+    font-weight: 800;
     position: absolute;
     z-index: 1;
-    top:50%;
-    left:50%;
+    top:8%;
     display: none;
-    background-color: brown;
+    width: 100%;
+    padding: 212px 0px 200px 0px;
+    background-color: rgb(255, 255, 255);
+    opacity: .9;
 }
