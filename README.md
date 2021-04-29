@@ -8,7 +8,7 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 
 ## Start Up Screen:
 Player will click the "Start the Quiz" button to begin.
-![Start Screen](./img/Start-Screen)
+![Start Screen](/img/Start-Screen.png)
 
 # HOW TO INSTALL
 
