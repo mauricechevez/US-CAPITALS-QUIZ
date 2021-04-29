@@ -80,6 +80,31 @@ qAnswer1.addEventListener('click', () =>{
     checkAnswer(answerValue)
 })
 ```
+## Timer
+Each question is limited to 10 seconds. Once 10 seconds has been reached, the next question is displayed. Once the last question is reached, and the timer has exceeded, the game ends and is considered a wrong answer.
+```javascript
+function showTimer(){
+    if (count <= qTimeCounter){
+        timerDiv.textContent = `${count} of 10 seconds to choose`
+        count++
+        changeTimerColor()   // Changes the color of font the closer it gets to 10.
+        } else {
+        count = 0
+        questionNumber++
+        console.log('Took too long, next question')
+        if (currentQuestionIndex < finalQuestionIndex){
+            // go to next question
+            currentQuestionIndex++
+            renderQuestion()
+        } else {
+            // Reached the end of the questions
+            console.log('Quiz Over - Times up.')
+            gameOverScreen()
+            clearInterval(timer)
+        }
+    }
+}
+```
 
 # FUTURE CONSIDERATIONS
 * Randomize the questions
