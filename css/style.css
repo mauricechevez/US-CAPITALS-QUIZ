@@ -12,13 +12,14 @@ h1{
 .container{
     border: blue solid 10px;
     height: 600px;
-    width: 900px;
+    width: 800px;
     position: relative;
     margin: 0 auto;
 }
 
 #quiz-container{
     position: relative;
+    border:1px solid red;
 }
 
 header{
@@ -82,7 +83,8 @@ header{
     font-size: 4rem;
     position: absolute;
     z-index: 1;
-    top:50px;
-    left:50px;
+    top:50%;
+    left:50%;
     display: none;
+    background-color: brown;
 }
