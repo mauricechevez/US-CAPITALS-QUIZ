@@ -90,8 +90,9 @@ header{
 }
 
 #game-over{
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 700;
+    color: rgb(0, 81, 255);
     position: absolute;
     z-index: 1;
     top: 7%;
