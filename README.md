@@ -142,6 +142,50 @@ function showTimer(){
 }
 ```
 
+## Score Calculation
+Each score range is broken down into different **IF** statements. Each range adds eagle emojis and writes it to the page.
+```javascript
+ /* ------ LAST SCREEN ------ */
+ function gameOverScreen(){
+    gameOverDiv.style.display = "block";
+    const scorePercent = Math.round(100 * score/shuffledQuestions.length)
+    /* gameOverDiv.innerHTML = `Quiz Complete`
+    gameOverDiv.innerHTML += `<br \>` */
+    console.log(scorePercent)
+    if (scorePercent <= 50){
+        gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=51 && scorePercent < 60){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png id='eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=60 && scorePercent < 70){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=70 && scorePercent < 80){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >= 80 && scorePercent < 90){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else if (scorePercent >=90){
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
+        gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
+    } else{
+        console.log('Something is broken....')
+    }
+}
+```
+
 # FUTURE CONSIDERATIONS
 * Add Reset Button.
 * Add a count down instead of count up.
