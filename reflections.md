@@ -42,7 +42,12 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. Finished up my quiz to an acceptable, presentable level.
+2. Present my project as best as possible
+3. None.
 
+# Post Project Questions
+1. What HTML, CSS, and or JavaScript skills you learned while building your game?
+- I finally used flex-direction to make something mobile compatible, as other CSS tricks I tried didn't wor for what I wanted to achieve. I also got comfortable, in general, with using Javascript. The DOM manipulation would be the best skill out of Javascript that I feel really good about learning during this project.
+2. What's one topic you want to spend more practice on?
+- More javascript in general. I think my biggest hurdle is the "why" use any one thing within Javascript. Little by little, I'm getting better at it, but I just need more practice.
