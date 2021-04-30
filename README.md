@@ -3,14 +3,14 @@
 Test your knowledge of the 50 U.S State Capitals.
 
 # HOW TO PLAY
-Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 51% or higher to recieve a passing score. There are 50 questions. 
+Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least **51% or higher** to recieve a passing score. There are 50 questions. 
 
 ## Start Screens and Gameplay
 ![Start Screen](/img/Start-Screen.png) 
-![Gameplay Screenshot](img/Gameplay_Screenshot.png)
+![Gameplay Screenshot](/img/Gameplay_Screenshot.png)
 
-## Visit the Github Page
-Please visit the **[United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/)** page to play on your browser
+## Play Online at the Github Page
+Please visit the **[United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/)** page to play on your browser.
 
 
 ## Score scale
@@ -83,7 +83,18 @@ There are 2 arrays which contain the questions for the player. One has the list 
 
 
 ## Score Tracking
-Each time a player clicks a selection, an event listner is set to grab the textContent of the element (in this case, a DIV) and passes that value to a paramter. The following function then uses **IF** statements to check whether the textContent matches what the answer is. This same function also checks if it has reached the last object in the array of questions, then presents the player with their score.
+Each time a player clicks a selection, an event listner is set to grab the textContent of the element (in this case, a DIV) and passes that value to a paramter. The function then uses **IF** statements to check whether the textContent matches what the answer is. This same function also checks if it has reached the last object in the array of questions, then presents the player with their score.
+### Event Listeners
+Each button value (the **textContent**) is passed to the CheckAnswer function.
+```javascript
+qAnswer1.addEventListener('click', () =>{
+    console.log('Answer1 clicked')
+    let answerValue = qAnswer1.textContent
+    console.log(answerValue)
+    checkAnswer(answerValue)
+})
+```
+### CheckAnswer function
 ```javascript
 function checkAnswer(clickedAnswer){
     if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
@@ -104,16 +115,7 @@ function checkAnswer(clickedAnswer){
     }      
 }
 ```
-## Event Listeners
-Each button value (the **textContent**) is passed up to the function above.
-```javascript
-qAnswer1.addEventListener('click', () =>{
-    console.log('Answer1 clicked')
-    let answerValue = qAnswer1.textContent
-    console.log(answerValue)
-    checkAnswer(answerValue)
-})
-```
+
 
 ## Timer
 Each question is has a 10 second time limit. Once reached, the next question is rendered. Questions that reach this limit are not marked, and therefore considered wrong.
@@ -152,8 +154,8 @@ Each score range is broken down into different **IF** statements. Each range add
     /* gameOverDiv.innerHTML = `Quiz Complete`
     gameOverDiv.innerHTML += `<br \>` */
     console.log(scorePercent)
-    if (scorePercent <= 50){
-        gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>`
+    if (scorePercent <= 50){ 
+        gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>` //Mighty Eagle from Angry Birds
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
     } else if (scorePercent >=51 && scorePercent < 60){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png id='eagle'>`
