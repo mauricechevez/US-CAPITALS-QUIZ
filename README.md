@@ -49,6 +49,34 @@ Each state, with choices of right and wrong answers, is stored in its own object
 ```javascript
 {question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',}
 ```
+## Shuffling the Questions
+There are 2 arrays which contain the questions for the player. One has the list of questions in alphabetical order. The other has a copy of that array which is shuffled, so the order presented to the player is never the same. Below is the code used to shuffle the items in the array:
+```javascript
+/* -------- Fisher-Yates shuffle -------- */
+/**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
+ function shuffle(array) {
+	let currentIndex = array.length;
+	let temporaryValue, randomIndex;
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+	return array;
+};
+```
+
 
 ## Score Tracking
 Each time a player clicks a selection, an event listner is set to grab the textContent of the element (in this case, a DIV) and passes that value to a paramter. The following function then uses **IF** statements to check whether the textContent matches what the answer is. This same function also checks if it has reached the last object in the array of questions, then presents the player with their score.
@@ -83,9 +111,9 @@ qAnswer1.addEventListener('click', () =>{
 })
 ```
 
-
 ## Timer
-Each question is limited to 10 seconds. Once the limit has been reached, the next question is displayed, and the question is marked wrong. When the list of questions has reached its limit using the **finalQuestionIndex** variable, it will stop the game and the player will be shown their score.
+Each question is has a 10 second time limit. Once reached, the next question is rendered. Questions that reach this limit are not marked, and therefore considered wrong.
+At the last question, if the timer's limit has been reached, the quiz ends and shows the score. It uses the shuffled questions array's   **finalQuestionIndex** variable, it will stop the game and the player will be shown their score.
 ```javascript
 function showTimer(){
     if (count <= qTimeCounter){
@@ -111,8 +139,9 @@ function showTimer(){
 ```
 
 # FUTURE CONSIDERATIONS
-* Add Reset Button
-* Add a count down instead of count up
+* Add Reset Button.
+* Add a count down instead of count up.
 * Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
-* Add a Progress Bar
-* Add a Score on Screen
+* Add a Progress Bar.
+* Add a current score . screen
+* Fix media queries to make game mobile compatible.
