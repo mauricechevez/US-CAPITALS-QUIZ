@@ -54,8 +54,11 @@ const stateQuestions = [
     {question: 'What is the capital of Wisconsin?', capital:'Madison'},
     {question: 'What is the capital of Wyoming?', capital:'Cheyenne'}, */
 ]
+// Shuffle the stateQuestions
+let shuffledQuestions = shuffle(stateQuestions)
+
 // Last index of questions to know where to end.
-let finalQuestionIndex = stateQuestions.length - 1
+let finalQuestionIndex = shuffledQuestions.length - 1
 
 // track current question
 let currentQuestionIndex = 0;
@@ -73,6 +76,7 @@ let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
 
 // Required Variables
+
 let timer;
 let score = 0; // Items correct
 let qTimeCounter = 10; // Seconds for each question
@@ -82,7 +86,7 @@ let questionNumber = 1
 function renderQuestion(){
    /* 
     start.className = 'hidden' */
-    let q = stateQuestions[currentQuestionIndex]
+    let q = shuffledQuestions[currentQuestionIndex]
     qDiv.innerHTML = `<p>${q.question}</p>`;
     qAnswer1.innerHTML = `<p>${q.capital1}</p>`
     qAnswer2.innerHTML = `<p>${q.capital2}</p>`
@@ -100,7 +104,7 @@ function startQuiz(){
 }
 // Check answer and track the score
 function checkAnswer(clickedAnswer){
-    if (clickedAnswer == stateQuestions[currentQuestionIndex].answer){
+    if (clickedAnswer == shuffledQuestions[currentQuestionIndex].answer){
         console.log('Correct!')
         score++
         questionNumber++
@@ -151,14 +155,14 @@ function changeTimerColor(){
 
 // How many questions left
  function showProgress(){
-    qProgress.textContent = 'Question ' + questionNumber + ' of ' + stateQuestions.length
+    qProgress.textContent = 'Question ' + questionNumber + ' of ' + shuffledQuestions.length
  }
 
 
  /* ------ LAST SCREEN ------ */
  function gameOverScreen(){
     gameOverDiv.style.display = "block";
-    const scorePercent = Math.round(100 * score/stateQuestions.length)
+    const scorePercent = Math.round(100 * score/shuffledQuestions.length)
     /* gameOverDiv.innerHTML = `Quiz Complete`
     gameOverDiv.innerHTML += `<br \>` */
     console.log(scorePercent)
@@ -196,7 +200,36 @@ function changeTimerColor(){
     
     }
 
-    
+/* -------- Fisher-Yates shuffle -------- */
+/**
+ * Randomly shuffle an array
+ * https://stackoverflow.com/a/2450976/1293256
+ * @param  {Array} array The array to shuffle
+ * @return {String}      The first item in the shuffled array
+ */
+ function shuffle(array) {
+
+	let currentIndex = array.length;
+	let temporaryValue, randomIndex;
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
+
+	return array;
+
+};
+
+
+
 
  
 

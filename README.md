@@ -13,7 +13,7 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 ## Score scale
 | Score      | Description |
 | ----------- | ----------- |
-|Less than 50%    |     Fail   |
+|50% or less    |     Fail   |
 |51% to 59%       | 1 Eagle     |
 |60% to 69%       | 2 Eagles    |
 |70% to 79%       | 3 Eagles     |
@@ -21,9 +21,9 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 |90% to 100%       | 5 Eagles     |
 
 ### Eagle Pictures
-| Fail | Pass |
+| Pass | Fail |
 | ----------- | ----------- |
-| ![Fail Eagle](/img/Mighty_Eagle_sm.png)| ![Pass Eagle](/img/eagle-sm_md.png)| 
+|![Pass Eagle](/img/eagle-sm_md.png)|![Fail Eagle](/img/Mighty_Eagle_sm.png)| 
 
 ### Passing and Failing screenshots
  ![Pass Screenshot](/img/Pass_Screenshot.png) ![Fail Screenshot](/img/Fail_Screenshot.png)| 
@@ -42,7 +42,7 @@ Player will click the "Start the Quiz" button to begin.
 # HOW IT WORKS
 
 ## Questions, Choices and Answers
-The questions are stored in an array. Each state, with the choices and answers are stored in their own objects within the array
+Each state, with choices of right and wrong answers, is stored in its own object. These objects are stored in one array. Example of a state object below:
 ```javascript
 {question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',}
 ```
@@ -81,7 +81,7 @@ qAnswer1.addEventListener('click', () =>{
 })
 ```
 ## Timer
-Each question is limited to 10 seconds. Once 10 seconds has been reached, the next question is displayed. Once the last question is reached, and the timer has exceeded, the game ends and is considered a wrong answer.
+Each question is limited to 10 seconds. Once the limit has been reached, the next question is displayed, and the question is marked wrong. When the list of questions has reached its limit using the **finalQuestionIndex** variable, it will stop the game and the player will be shown their score.
 ```javascript
 function showTimer(){
     if (count <= qTimeCounter){

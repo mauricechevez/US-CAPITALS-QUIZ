@@ -44,6 +44,7 @@ header{
 }
 #start-button:hover{
     color: white;
+    border:red 2px solid;
     background:rgba(0, 81, 255);
     border-radius: 10px;
 }
@@ -111,12 +112,21 @@ header{
     margin:5px;
 }
 
+#progress{
+    font-size: 1.5rem;
+}
+
 
 @media only screen and (max-width: 600px) {
     
     .container{
         width:100%;
     }
+
+    h1{
+        font-size: 3.3rem;
+    }
+
     #start-button{
         width:95%;
     }
