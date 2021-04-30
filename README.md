@@ -3,22 +3,25 @@
 Test your knowledge of the 50 U.S State Capitals.
 
 # HOW TO PLAY
-## Visit the Github Page
-Please visit the [United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/) page to play on your browser
+Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
 
-### Gameplayer Screenshot
+## Start Screens and Gameplay
+![Start Screen](/img/Start-Screen.png) 
 ![Gameplay Screenshot](img/Gameplay_Screenshot.png)
 
-Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
+## Visit the Github Page
+Please visit the **[United States Capitals Quiz](https://mauricechevez.github.io/US-CAPITALS-QUIZ/)** page to play on your browser
+
+
 ## Score scale
 | Score      | Description |
 | ----------- | ----------- |
-|50% or less    |     Fail   |
-|51% to 59%       | 1 Eagle     |
-|60% to 69%       | 2 Eagles    |
+|50% or less      |  Fail        |
+|51% to 59%       | 1 Eagle      |
+|60% to 69%       | 2 Eagles     |
 |70% to 79%       | 3 Eagles     |
 |80% to 89%       | 4 Eagles     |
-|90% to 100%       | 5 Eagles     |
+|90% to 100%      | 5 Eagles     |
 
 ### Eagle Pictures
 | Pass | Fail |
@@ -31,10 +34,10 @@ Player starts the quiz by clicking the start button. Player has 10 seconds to co
 ## Start Up Screen:
 Player will click the "Start the Quiz" button to begin.
 
-![Start Screen](/img/Start-Screen.png)
 
-# HOW TO INSTALL
 
+# HOW TO INSTALL LOCALLY
+If you prefer not to play online, please follow the instructions below
 1. *`Fork`* and *`Clone`* this respository to your local machine
 2. Open `index.html` in your browser to play or 
 3. Open the directory in your text editor of choice to view or edit the code
@@ -66,12 +69,11 @@ function checkAnswer(clickedAnswer){
         console.log('Quiz over!')
         gameOverScreen()
         clearInterval(timer)
-    }
-        
+    }      
 }
 ```
 ## Event Listeners
-When the player makes a selection, the value of that selection is passed up to the function above
+Each button value (the **textContent**) is passed up to the function above.
 ```javascript
 qAnswer1.addEventListener('click', () =>{
     console.log('Answer1 clicked')
@@ -80,6 +82,8 @@ qAnswer1.addEventListener('click', () =>{
     checkAnswer(answerValue)
 })
 ```
+
+
 ## Timer
 Each question is limited to 10 seconds. Once the limit has been reached, the next question is displayed, and the question is marked wrong. When the list of questions has reached its limit using the **finalQuestionIndex** variable, it will stop the game and the player will be shown their score.
 ```javascript
@@ -107,8 +111,8 @@ function showTimer(){
 ```
 
 # FUTURE CONSIDERATIONS
-* Randomize the questions
 * Add Reset Button
+* Add a count down instead of count up
 * Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
 * Add a Progress Bar
 * Add a Score on Screen
