@@ -208,10 +208,8 @@ function changeTimerColor(){
  * @return {String}      The first item in the shuffled array
  */
  function shuffle(array) {
-
 	let currentIndex = array.length;
 	let temporaryValue, randomIndex;
-
 	// While there remain elements to shuffle...
 	while (0 !== currentIndex) {
 		// Pick a remaining element...
@@ -223,15 +221,8 @@ function changeTimerColor(){
 		array[currentIndex] = array[randomIndex];
 		array[randomIndex] = temporaryValue;
 	}
-
 	return array;
-
 };
-
-
-
-
- 
 
 /*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{
