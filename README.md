@@ -3,7 +3,7 @@
 Test your knowledge of the 50 U.S State Capitals.
 
 # HOW TO PLAY
-Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 60% or higher to recieve a passing score. There are 50 questions. 
+Player starts the quiz by clicking the start button. Player has 10 seconds to correctly guess each state capital. Player needs at least 51% or higher to recieve a passing score. There are 50 questions. 
 
 ## Start Screens and Gameplay
 ![Start Screen](/img/Start-Screen.png) 
