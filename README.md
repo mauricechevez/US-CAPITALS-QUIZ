@@ -47,7 +47,11 @@ If you prefer not to play online, please follow the instructions below
 ## Questions, Choices and Answers
 Each state, with choices of right and wrong answers, is stored in its own object. These objects are stored in one array. Example of a state object below:
 ```javascript
-{question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',}
+{question: 'What is the capital of California?', 
+capital1:'Trenton',
+ capital2:'Santa Fe',
+ capital3:'Sacramento',
+ answer:'Sacramento',}
 ```
 ## Shuffling the Questions
 There are 2 arrays which contain the questions for the player. One has the list of questions in alphabetical order. The other has a copy of that array which is shuffled, so the order presented to the player is never the same. Below is the code used to shuffle the items in the array:
