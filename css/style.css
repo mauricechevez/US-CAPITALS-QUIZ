@@ -115,10 +115,14 @@ header{
 #progress{
     font-size: 1.5rem;
 }
-
+.refesh-page{
+    font-size: 2.5rem;
+    color: black;
+}
 .refesh-page:hover{
     text-decoration: underline;
     cursor: pointer;
+    color:  rgb(0, 81, 255);
 }
 
 
