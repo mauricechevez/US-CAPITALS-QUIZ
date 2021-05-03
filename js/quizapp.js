@@ -74,7 +74,13 @@ let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
 let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
-let headlineThree;
+let knowledgeCheck = document.querySelector('#knowledge-check')
+
+/* Difficulty screen variables */
+const difficultyScreen = document.getElementById('choose-difficulty')
+const easyMode = document.getElementById('easy')
+const mediumMode = document.getElementById('medium')
+const hardMode = document.getElementById('hard')
 
 // Required Variables
 
@@ -84,10 +90,17 @@ let qTimeCounter = 10; // Seconds for each question
 let count = 0 // place holder for each second that passes
 let questionNumber = 1
 
+/* **** FUNCTIONS SECTION ******/
+
+function chooseDifficultyScreen(){
+    start.className = 'hidden'
+    difficultyScreen.style.display = 'flex'
+    knowledgeCheck.innerHTML = 'Choose a difficulty level'
+}
+
+
 function renderQuestion(){
-   /* 
-    start.className = 'hidden' */
-    let q = shuffledQuestions[currentQuestionIndex]
+   let q = shuffledQuestions[currentQuestionIndex]
     qDiv.innerHTML = `<p>${q.question}</p>`;
     qAnswer1.innerHTML = `<p>${q.capital1}</p>`
     qAnswer2.innerHTML = `<p>${q.capital2}</p>`
@@ -97,8 +110,9 @@ function renderQuestion(){
 
 //Start Quiz function
 function startQuiz(){
-    start.className = 'hidden'
-    document.querySelector('h3').style.display = 'none'
+    difficultyScreen.style.display = 'none'
+    // document.querySelector('h3').style.display = 'none'
+    knowledgeCheck.style.display = 'none'
     renderQuestion(); // Call on the function Render Question to display on screen
     qContainer.className ='unhidden' // Make questions visible
     showTimer()
@@ -238,8 +252,13 @@ function refreshPage(){
 
 /*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{
-    startQuiz();
+    // startQuiz();
+    chooseDifficultyScreen()
 })
+easyMode.addEventListener('click',()=>{
+    startQuiz()
+})
+
 
 // Event Listeners for all choice buttons
 qAnswer1.addEventListener('click', () =>{
