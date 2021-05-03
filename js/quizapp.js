@@ -74,6 +74,7 @@ let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
 let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
+let headlineThree;
 
 // Required Variables
 
@@ -97,6 +98,7 @@ function renderQuestion(){
 //Start Quiz function
 function startQuiz(){
     start.className = 'hidden'
+    document.querySelector('h3').style.display = 'none'
     renderQuestion(); // Call on the function Render Question to display on screen
     qContainer.className ='unhidden' // Make questions visible
     showTimer()

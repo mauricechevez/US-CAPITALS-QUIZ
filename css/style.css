@@ -127,8 +127,13 @@ header{
         font-size: 3.3rem;
     }
 
+    h3{
+        display: block;
+    }
+
     #start-button{
         width:95%;
+        padding:25px
     }
     #answers-container{
         display:flex;
@@ -157,4 +162,23 @@ header{
         object-fit: scale-down !important;
     }
 
+  }
+  @media only screen and (max-width:399px){
+      h1{
+          font-size: 2.8rem;
+        }
+    h3{
+        font-size: 1rem;
+    }
+    #start-button{
+        font-size: 2.8rem;
+        padding:40px;
+    }
+    #questions-div{
+        font-size: 1.5rem;
+    }
+    #timer-div{
+        font-size: 1.5rem;
+    }
+    
   }
