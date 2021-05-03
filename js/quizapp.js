@@ -55,6 +55,7 @@ const stateQuestions = [
     {question: 'What is the capital of Wyoming?', capital:'Cheyenne'}, */
 ]
 // Shuffle the stateQuestions
+// let shuffledQuestions = shuffle(stateQuestions)
 let shuffledQuestions = shuffle(stateQuestions)
 
 // Last index of questions to know where to end.
@@ -96,6 +97,15 @@ function chooseDifficultyScreen(){
     start.className = 'hidden'
     difficultyScreen.style.display = 'flex'
     knowledgeCheck.innerHTML = 'Choose a difficulty level'
+}
+
+function easyModeQuestions(questions){
+    let result = questions.slice(0,3)
+    return result
+}
+function mediumModeQuestions(questions){
+    let result = questions.slice(0,5)
+    return result
 }
 
 
@@ -256,6 +266,18 @@ start.addEventListener('click',() =>{
     chooseDifficultyScreen()
 })
 easyMode.addEventListener('click',()=>{
+    slicedQuestions = easyModeQuestions(shuffledQuestions)
+    shuffledQuestions = slicedQuestions
+    finalQuestionIndex = shuffledQuestions.length - 1
+    startQuiz()
+})
+mediumMode.addEventListener('click', ()=>{
+    slicedQuestions = mediumModeQuestions(shuffledQuestions)
+    shuffledQuestions = slicedQuestions
+    finalQuestionIndex = shuffledQuestions.length - 1
+    startQuiz()
+})
+hardMode.addEventListener('click', ()=>{
     startQuiz()
 })
 
