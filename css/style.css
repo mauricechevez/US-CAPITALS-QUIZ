@@ -13,7 +13,7 @@ h1{
 .container{
     border: red solid 2px;
     background: white;
-    height: 600px;
+    height: 500px;
     width: 800px;
     position: relative;
     margin: 0 auto;
@@ -99,7 +99,7 @@ header{
     top: 7%;
     display: none;
     width: 100%;
-    padding: 0px 0px 115px 0px;
+    padding: 0px 0px 95px 0px;
     background-color: rgb(255, 255, 255);
     /* opacity: .95; */
 }
@@ -116,7 +116,7 @@ header{
     font-size: 1.5rem;
 }
 .refesh-page{
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     color: black;
 }
 .refesh-page:hover{
@@ -133,7 +133,7 @@ header{
     }
 
     h1{
-        font-size: 3.3rem;
+        font-size: 3rem;
     }
 
     h3{
@@ -153,13 +153,14 @@ header{
 
     }
     #answers-container > div{
-        margin-right: 0px !important
+        margin-right: 0px !important;
+        margin-bottom: 15px;
     }
     .choices:last-child{
         margin-bottom: 15px;
     }
     #game-over{
-        padding:55px 0px 180px 0px;
+        padding:55px 0px 100px 0px;
     }
     #eagle{
         height: 75px;
@@ -169,6 +170,20 @@ header{
         width: 200px !important;
         height: 100px !important;
         object-fit: scale-down !important;
+    }
+    #questions-div{
+        font-size: 1.5rem;
+    }
+    #timer-div{
+        color:black;
+        font-size: 1.5rem;
+    }
+
+    #game-over{
+        font-size:2.8rem;
+    }
+    .refresh-page{
+        font-size:2rem !important;
     }
 
   }
@@ -184,10 +199,16 @@ header{
         padding:40px;
     }
     #questions-div{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     #timer-div{
-        font-size: 1.5rem;
+        font-size: 1.4srem;
     }
-    
-  }
+    #game-over{
+        padding:55px 0px 60px 0px;
+     }
+     .refresh-page{
+        font-size:2rem !important;
+    }
+
+}
