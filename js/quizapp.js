@@ -175,29 +175,34 @@ function refreshPage(){
     if (scorePercent <= 50){
         gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else if (scorePercent >=51 && scorePercent < 60){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png id='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else if (scorePercent >=60 && scorePercent < 70){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else if (scorePercent >=70 && scorePercent < 80){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else if (scorePercent >= 80 && scorePercent < 90){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else if (scorePercent >=90){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
@@ -205,7 +210,8 @@ function refreshPage(){
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<img src=./img/eagle-sm.png class='eagle'>`
         gameOverDiv.innerHTML += `<p> ${scorePercent}% Correct</p>`
-        gameOverDiv.innerHTML += `<p class='refesh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        gameOverDiv.innerHTML += `<p class='refresh-page' onclick='refreshPage()'>Click here to retake quiz</p>`
+        qContainer.className = 'hidden';
     } else{
         console.log('Something is broken....')
     }

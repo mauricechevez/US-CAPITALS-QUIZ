@@ -115,11 +115,11 @@ header{
 #progress{
     font-size: 1.5rem;
 }
-.refesh-page{
+.refresh-page{
     font-size: 2.0rem;
     color: black;
 }
-.refesh-page:hover{
+.refresh-page:hover{
     text-decoration: underline;
     cursor: pointer;
     color:  rgb(0, 81, 255);
@@ -162,9 +162,9 @@ header{
     #game-over{
         padding:55px 0px 100px 0px;
     }
-    #eagle{
-        height: 75px;
-        width: 75px;
+    .eagle{
+        height: 60px;
+        width: 60px;
     }
     #mighty-eagle{
         width: 200px !important;
@@ -188,7 +188,7 @@ header{
 
   }
   @media only screen and (max-width:399px){
-      h1{
+    h1{
           font-size: 2.8rem;
         }
     h3{
@@ -198,6 +198,12 @@ header{
         font-size: 2.8rem;
         padding:40px;
     }
+    .eagle{
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+    }
+
     #questions-div{
         font-size: 1.4rem;
     }
@@ -205,10 +211,38 @@ header{
         font-size: 1.4srem;
     }
     #game-over{
-        padding:55px 0px 60px 0px;
+        padding: 40px 0px 90px 0px;
      }
      .refresh-page{
-        font-size:2rem !important;
+        font-size: 1.5rem !important;
+    }
+    #start-button{
+        font-size: 2.8rem;
+        padding: 25px;
     }
 
-}
+    }
+    @media only screen and (max-width:350px){
+    #start-button{
+        font-size: 2.5rem;
+        padding: 15px;
+    }
+    h1{
+        font-size:2.4rem;
+    }
+    #questions-div{
+        font-size: 1.2rem;
+    }
+    .refresh-page{
+        font-size: 1.4rem !important;
+        color: black;
+    }
+    #game-over{
+        font-size: 2.4rem;
+    }
+    #timer-div{
+        font-size: 1.2rem; 
+    }
+    
+    }
+    
