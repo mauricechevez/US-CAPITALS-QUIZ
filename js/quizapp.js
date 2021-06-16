@@ -100,14 +100,18 @@ function chooseDifficultyScreen(){
 }
 
 function easyModeQuestions(questions){
-    let result = questions.slice(0,3)
+    const result = questions.slice(0,3)
     return result
 }
 function mediumModeQuestions(questions){
-    let result = questions.slice(0,5)
+    const result = questions.slice(0,5)
     return result
 }
 
+function hardModeQuestions(questions){
+    const result = questions.slice(0,10)
+    return result
+}
 
 function renderQuestion(){
    let q = shuffledQuestions[currentQuestionIndex]
