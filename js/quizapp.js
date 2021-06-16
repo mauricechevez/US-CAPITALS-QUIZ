@@ -55,6 +55,7 @@ const stateQuestions = [
     {question: 'What is the capital of Wyoming?', capital1:'Indianapolis', capital2:'Cheyenne', capital3:'Austin', answer:'Cheyenne'}, 
 ]
 // Shuffle the stateQuestions
+// let shuffledQuestions = shuffle(stateQuestions)
 let shuffledQuestions = shuffle(stateQuestions)
 
 // Last index of questions to know where to end.
@@ -74,7 +75,13 @@ let qProgress = document.querySelector('#progress')
 let start = document.querySelector('#start-button')
 let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
-let headlineThree;
+let knowledgeCheck = document.querySelector('#knowledge-check')
+
+/* Difficulty screen variables */
+const difficultyScreen = document.getElementById('choose-difficulty')
+const easyMode = document.getElementById('easy')
+const mediumMode = document.getElementById('medium')
+const hardMode = document.getElementById('hard')
 
 // Required Variables
 
@@ -84,10 +91,30 @@ let qTimeCounter = 10; // Seconds for each question
 let count = 0 // place holder for each second that passes
 let questionNumber = 1
 
+/* **** FUNCTIONS SECTION ******/
+
+function chooseDifficultyScreen(){
+    start.className = 'hidden'
+    difficultyScreen.style.display = 'flex'
+    knowledgeCheck.innerHTML = 'Choose a difficulty level'
+}
+
+function easyModeQuestions(questions){
+    const result = questions.slice(0,3)
+    return result
+}
+function mediumModeQuestions(questions){
+    const result = questions.slice(0,5)
+    return result
+}
+
+function hardModeQuestions(questions){
+    const result = questions.slice(0,10)
+    return result
+}
+
 function renderQuestion(){
-   /* 
-    start.className = 'hidden' */
-    let q = shuffledQuestions[currentQuestionIndex]
+   let q = shuffledQuestions[currentQuestionIndex]
     qDiv.innerHTML = `<p>${q.question}</p>`;
     qAnswer1.innerHTML = `<p>${q.capital1}</p>`
     qAnswer2.innerHTML = `<p>${q.capital2}</p>`
@@ -97,8 +124,9 @@ function renderQuestion(){
 
 //Start Quiz function
 function startQuiz(){
-    start.className = 'hidden'
-    document.querySelector('h3').style.display = 'none'
+    difficultyScreen.style.display = 'none'
+    // document.querySelector('h3').style.display = 'none'
+    knowledgeCheck.style.display = 'none'
     renderQuestion(); // Call on the function Render Question to display on screen
     qContainer.className ='unhidden' // Make questions visible
     showTimer()
@@ -244,8 +272,25 @@ function refreshPage(){
 
 /*  ------ Start of Event Listeners section ------ */
 start.addEventListener('click',() =>{
-    startQuiz();
+    // startQuiz();
+    chooseDifficultyScreen()
 })
+easyMode.addEventListener('click',()=>{
+    slicedQuestions = easyModeQuestions(shuffledQuestions)
+    shuffledQuestions = slicedQuestions
+    finalQuestionIndex = shuffledQuestions.length - 1
+    startQuiz()
+})
+mediumMode.addEventListener('click', ()=>{
+    slicedQuestions = mediumModeQuestions(shuffledQuestions)
+    shuffledQuestions = slicedQuestions
+    finalQuestionIndex = shuffledQuestions.length - 1
+    startQuiz()
+})
+hardMode.addEventListener('click', ()=>{
+    startQuiz()
+})
+
 
 // Event Listeners for all choice buttons
 qAnswer1.addEventListener('click', () =>{

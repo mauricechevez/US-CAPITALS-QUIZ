@@ -9,6 +9,7 @@ body{
 }
 h1{
     font-size: 4rem;
+    margin:25px 0px 25px 0px;
 }
 .container{
     border: red solid 2px;
@@ -46,8 +47,30 @@ header{
     color: white;
     border:red 2px solid;
     background:rgba(0, 81, 255);
-    border-radius: 10px;
 }
+
+#choose-difficulty{
+    display: none;
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#easy,#medium,#hard{
+    border: black 1px solid;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#easy:hover,#medium:hover,#hard:hover{
+    color: white;
+    border:red 2px solid;
+    background:rgba(0, 81, 255);
+}
+
 
 .hidden{
     display: none;
