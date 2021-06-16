@@ -100,16 +100,16 @@ function chooseDifficultyScreen(){
 }
 
 function easyModeQuestions(questions){
-    const result = questions.slice(0,3)
+    const result = questions.slice(0,10)
     return result
 }
 function mediumModeQuestions(questions){
-    const result = questions.slice(0,5)
+    const result = questions.slice(0,25)
     return result
 }
 
 function hardModeQuestions(questions){
-    const result = questions.slice(0,10)
+    const result = questions.slice(0,50)
     return result
 }
 
