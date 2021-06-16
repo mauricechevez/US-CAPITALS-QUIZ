@@ -45,7 +45,7 @@ const stateQuestions = [
     {question: 'What is the capital of Vermont?', capital1:'Baton Rouge', capital2:'Springfield', capital3:'Montpelier', answer:'Montpelier'},
     {question: 'What is the capital of Virginia', capital1:'Richmond', capital2:'Hartford', capital3:'Montpelier', answer:'Richmond'},
     {question: 'What is the capital of Washington?', capital1:'Jackson', capital2:'Olympia', capital3:'Carson City', answer:'Olympia'},
-    {question: 'What is the capital of West Virgina?', capital1:'Madison', capital2:'Annapolis', capital3:'Charleston', answer:'Charleston'},
+    {question: 'What is the capital of West Virgina?', capital1:'Madison', capital2:'Charleston', capital3:'Annapolis', answer:'Charleston'},
     {question: 'What is the capital of Wisconsin?', capital1:'Sacramento', capital2:'Trenton', capital3:'Madison', answer:'Madison'},
     {question: 'What is the capital of Wyoming?', capital1:'Indianapolis', capital2:'Cheyenne', capital3:'Austin', answer:'Cheyenne'}, 
 ]
