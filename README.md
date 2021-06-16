@@ -191,7 +191,9 @@ Each score range is broken down into different **IF** statements. Each range add
 # FUTURE CONSIDERATIONS
 * Add Reset Button.
 * Add a count down instead of count up.
-* Add difficulty levels, which would consist of subsets of the 50 states. For example, player can choose easy (10 questions), medium (25 questions), or hard (50 questions).
 * Add a Progress Bar.
 * Add a current score to screen
 * Fix media queries to make game mobile compatible.
+
+# Change Log
+- [X] (6/15/2021) Added difficulty selection screen. Player can now choose Easy, Medium, or Hard modes, displaying 10, 25, or 50 questions, respectively.
