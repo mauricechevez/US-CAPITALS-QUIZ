@@ -1,14 +1,9 @@
 // List of questions
 const stateQuestions = [
-    {question: 'What is the capital of Alabama?', 
-    capital1:'Boise',
-    capital2:'Dover',
-    capital3:'Montgomery',
-    answer:'Montgomery'
-    },
+    {question: 'What is the capital of Alabama?', capital1:'Boise', capital2:'Dover', capital3:'Montgomery', answer:'Montgomery'},
     {question: 'What is the capital of Alaska?', capital1:'Montpelier', capital2:'Carson City', capital3:'Juneau', answer:'Juneau'},
     {question: 'What is the capital of Arizona?', capital1:'Boise', capital2:'Phoenix', capital3:'Jefferson City', answer:'Phoenix'},
-    {question: 'What is the capital of Arkansas?', capital1:'Little Rock', capital2:'Springfield', capital3:'Jefferson City', answer:'Hartford', answer:'Little Rock'},
+    {question: 'What is the capital of Arkansas?', capital1:'Little Rock', capital2:'Springfield', capital3:'Jefferson City', answer:'Little Rock'},
     {question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',},
     {question: 'What is the capital of Colorado?', capital1:'Lincoln', capital2:'Denver',capital3:'Augusta', answer:'Denver'},
     {question: 'What is the capital of Connecticut?', capital1:'Salem', capital2:'Harrisburg',capital3:'Hartford', answer:'Hartford'},
@@ -26,7 +21,7 @@ const stateQuestions = [
     {question: 'What is the capital of Maryland?',capital1:'Jefferson City', capital2:'Harrisburg', capital3:'Annapolis', answer:'Annapolis'},
     {question: 'What is the capital of Massachusetts?',capital1:'Saint Paul', capital2:'Boston',capital3:'Nashville',answer:'Boston'},
     {question: 'What is the capital of Michigan?', capital1:'Denver', capital2:'Pierre', capital3:'Lansing', answer:'Lansing'},
-    {question: 'What is the capital of Minnesota?', capital:'Saint Paul', capital2:'Tallahassee',capital3:'Salt Lake City', answer:'Saint Paul'},
+    {question: 'What is the capital of Minnesota?', capital1:'Saint Paul', capital2:'Tallahassee',capital3:'Salt Lake City', answer:'Saint Paul'},
     {question: 'What is the capital of Mississippi?', capital1:'Jackson', capital2:'Albany', capital3:'Salem', answer:'Jackson'},
     {question: 'What is the capital of Missouri?',capital1:'Jackson', capital2:'Little Rock', capital3:'Jefferson City', answer:'Jefferson City'},
     {question: 'What is the capital of Montana?', capital1:'Carson City', capital2:'Helena', capital3:'Raleigh', answer:'Helena'},
@@ -38,7 +33,7 @@ const stateQuestions = [
     {question: 'What is the capital of North Carolina?', capital1:'Raleigh', capital2:'Hartford', capital3:'Nashville', answer:'Raleigh'},
     {question: 'What is the capital of Nebraska?', capital1:'Montpelier', capital2:'Columbia', capital3:'Lincoln', answer:'Lincoln'},
     {question: 'What is the capital of Ohio?', capital1:'Olympia', capital2:'Columbia', capital3:'Columbus', answer:'Columbus'},
-    {question: 'What is the capital of Oklahoma?', capital1:'Jefferson City', capital2:'Carson City', capital3:'Oklahoma City',  capital:'Oklahoma City'},
+    {question: 'What is the capital of Oklahoma?', capital1:'Jefferson City', capital2:'Carson City', capital3:'Oklahoma City',  answer:'Oklahoma City'},
     {question: 'What is the capital of Oregon?', capital1:'Salem', capital2:'Charleston', capital3:'Madison', answer:'Salem'},
     {question: 'What is the capital of Pennsylvania?', capital1:'Des Moines', capital2:'Atlanta', capital3:'Harrisburg', answer:'Harrisburg'},
     {question: 'What is the capital of Rhode Island?', capital1:'Honolulu', capital2:'Providence', capital3:'Denver', answer:'Providence'},
@@ -50,7 +45,7 @@ const stateQuestions = [
     {question: 'What is the capital of Vermont?', capital1:'Baton Rouge', capital2:'Springfield', capital3:'Montpelier', answer:'Montpelier'},
     {question: 'What is the capital of Virginia', capital1:'Richmond', capital2:'Hartford', capital3:'Montpelier', answer:'Richmond'},
     {question: 'What is the capital of Washington?', capital1:'Jackson', capital2:'Olympia', capital3:'Carson City', answer:'Olympia'},
-    {question: 'What is the capital of West Virgina?', capital1:'Madison', capital2:'Annapolis', capital3:'Phoenix', answer:'Charleston'},
+    {question: 'What is the capital of West Virgina?', capital1:'Madison', capital2:'Annapolis', capital3:'Charleston', answer:'Charleston'},
     {question: 'What is the capital of Wisconsin?', capital1:'Sacramento', capital2:'Trenton', capital3:'Madison', answer:'Madison'},
     {question: 'What is the capital of Wyoming?', capital1:'Indianapolis', capital2:'Cheyenne', capital3:'Austin', answer:'Cheyenne'}, 
 ]
