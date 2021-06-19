@@ -170,6 +170,8 @@ function showTimer(){
         } else {
         count = 0
         questionNumber++
+        incorrectQuestions++
+        changeStatus()
         console.log('Took too long, next question')
         if (currentQuestionIndex < finalQuestionIndex){
             // go to next question
