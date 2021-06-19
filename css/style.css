@@ -18,6 +18,7 @@ h1{
     width: 800px;
     position: relative;
     margin: 0 auto;
+    margin-top:50px;
     padding-top: 3px;
     border-radius: 10px;
     -webkit-box-shadow: 4px 5px 15px 1px #000000; 
@@ -58,7 +59,7 @@ header{
 }
 
 #easy,#medium,#hard{
-    border: black 1px solid;
+    border: blue 1px solid;
     margin-right: 10px;
     font-size: 1.1rem;
     padding: 10px;
@@ -71,6 +72,10 @@ header{
     background:rgba(0, 81, 255);
 }
 
+.blue-text{
+  color: blue;
+  font-weight: 600;
+}
 
 .hidden{
     display: none;
@@ -147,6 +152,13 @@ header{
     cursor: pointer;
     color:  rgb(0, 81, 255);
 }
+.github-icon{
+  width: 16px;
+}
+
+footer{
+  margin-top: 25px;
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -221,6 +233,19 @@ header{
         font-size: 2.8rem;
         padding:40px;
     }
+
+    #choose-difficulty{
+      justify-content: space-around !important;
+    }
+    #easy,#medium,#hard{
+      border: black 1px solid;
+      font-size: 1rem;
+      margin-right: 0px;
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+
     .eagle{
         height: 50px;
         width: 50px;

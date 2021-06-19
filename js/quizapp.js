@@ -3,7 +3,7 @@ const stateQuestions = [
     {question: 'What is the capital of Alabama?', capital1:'Boise', capital2:'Dover', capital3:'Montgomery', answer:'Montgomery'},
     {question: 'What is the capital of Alaska?', capital1:'Montpelier', capital2:'Carson City', capital3:'Juneau', answer:'Juneau'},
     {question: 'What is the capital of Arizona?', capital1:'Boise', capital2:'Phoenix', capital3:'Jefferson City', answer:'Phoenix'},
-    {question: 'What is the capital of Arkansas?', capital1:'Little Rock', capital2:'Springfield', capital3:'Jefferson City', answer:'Little Rock'},
+    {question: 'What is the capital of Arkansas?', capital1:'Little Rock', capital2:'Bismarck', capital3:'Jefferson City', answer:'Little Rock'},
     {question: 'What is the capital of California?', capital1:'Trenton', capital2:'Santa Fe',capital3:'Sacramento',answer:'Sacramento',},
     {question: 'What is the capital of Colorado?', capital1:'Lincoln', capital2:'Denver',capital3:'Augusta', answer:'Denver'},
     {question: 'What is the capital of Connecticut?', capital1:'Salem', capital2:'Harrisburg',capital3:'Hartford', answer:'Hartford'},
@@ -16,6 +16,7 @@ const stateQuestions = [
     {question: 'What is the capital of Indiana?', capital1:'Salt Lake City', capital2:'Providence',capital3:'Indianapolis', answer:'Indianapolis'},
     {question: 'What is the capital of Iowa?', capital1:'Topeka', capital2:'Des Moines',capital3:'Richmond', answer:'Des Moines'},
     {question: 'What is the capital of Kansas?', capital1:'Topeka', capital2:'Helena',capital3:'Columbia', answer:'Topeka'},
+    {question: 'What is the capital of Kentucky?', capital1:'Frankfort', capital2:'Boston',capital3:'Phoenix', answer:'Frankfort'},
     {question: 'What is the capital of Louisiana?', capital1:'Pierre', capital2:'Montpelier',capital3:'Baton Rouge',answer:'Baton Rouge'},
     {question: 'What is the capital of Maine?', capital1:'Augusta', capital2:'Raleigh',capital3:'Charleston', answer:'Augusta'},
     {question: 'What is the capital of Maryland?',capital1:'Jefferson City', capital2:'Harrisburg', capital3:'Annapolis', answer:'Annapolis'},
@@ -25,13 +26,14 @@ const stateQuestions = [
     {question: 'What is the capital of Mississippi?', capital1:'Jackson', capital2:'Albany', capital3:'Salem', answer:'Jackson'},
     {question: 'What is the capital of Missouri?',capital1:'Jackson', capital2:'Little Rock', capital3:'Jefferson City', answer:'Jefferson City'},
     {question: 'What is the capital of Montana?', capital1:'Carson City', capital2:'Helena', capital3:'Raleigh', answer:'Helena'},
+    {question: 'What is the capital of Nebraska?', capital1:'Montpelier', capital2:'Columbia', capital3:'Lincoln', answer:'Lincoln'},
     {question: 'What is the capital of Nevada?', capital1:'Madison', capital2:'Lincoln', capital3:'Carson City', answer:'Carson City'},
     {question: 'What is the capital of New Hampshire?', capital1:'Richmond', capital2:'Concord', capital3:'Providence', answer:'Concord'},
     {question: 'What is the capital of New Jersey?', capital1:'Trenton', capital2:'Albany', capital3:'Salem', answer:'Trenton'},
     {question: 'What is the capital of New Mexico?', capital1:'Columbus', capital2:'Columbia', capital3:'Santa Fe', answer:'Santa Fe'},
     {question: 'What is the capital of New York?', capital1:'Richmond', capital2:'Salem', capital3:'Albany', answer:'Albany'},
     {question: 'What is the capital of North Carolina?', capital1:'Raleigh', capital2:'Hartford', capital3:'Nashville', answer:'Raleigh'},
-    {question: 'What is the capital of Nebraska?', capital1:'Montpelier', capital2:'Columbia', capital3:'Lincoln', answer:'Lincoln'},
+    {question: 'What is the capital of North Dakota?', capital1:'Bismarck', capital2:'Montgomery', capital3:'Frankfort', answer:'Bismarck'},
     {question: 'What is the capital of Ohio?', capital1:'Olympia', capital2:'Columbia', capital3:'Columbus', answer:'Columbus'},
     {question: 'What is the capital of Oklahoma?', capital1:'Jefferson City', capital2:'Carson City', capital3:'Oklahoma City',  answer:'Oklahoma City'},
     {question: 'What is the capital of Oregon?', capital1:'Salem', capital2:'Charleston', capital3:'Madison', answer:'Salem'},
@@ -46,7 +48,7 @@ const stateQuestions = [
     {question: 'What is the capital of Virginia', capital1:'Richmond', capital2:'Hartford', capital3:'Montpelier', answer:'Richmond'},
     {question: 'What is the capital of Washington?', capital1:'Jackson', capital2:'Olympia', capital3:'Carson City', answer:'Olympia'},
     {question: 'What is the capital of West Virgina?', capital1:'Madison', capital2:'Charleston', capital3:'Annapolis', answer:'Charleston'},
-    {question: 'What is the capital of Wisconsin?', capital1:'Sacramento', capital2:'Trenton', capital3:'Madison', answer:'Madison'},
+    {question: 'What is the capital of Wisconsin?', capital1:'Baton Rouge', capital2:'Trenton', capital3:'Madison', answer:'Madison'},
     {question: 'What is the capital of Wyoming?', capital1:'Indianapolis', capital2:'Cheyenne', capital3:'Austin', answer:'Cheyenne'}, 
 ]
 // Shuffle the stateQuestions
@@ -71,6 +73,7 @@ let start = document.querySelector('#start-button')
 let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
 let knowledgeCheck = document.querySelector('#knowledge-check')
+let statusContainer = document.querySelector('#status-container')
 
 /* Difficulty screen variables */
 const difficultyScreen = document.getElementById('choose-difficulty')
@@ -104,7 +107,7 @@ function mediumModeQuestions(questions){
 }
 
 function hardModeQuestions(questions){
-    const result = questions.slice(0,50)
+    const result = questions
     return result
 }
 
@@ -117,6 +120,10 @@ function renderQuestion(){
     showProgress()
 }
 
+function changeStatus(){
+  statusContainer.innerHTML = `<p>You currently have <span class="blue-text">${score}</span> correct</p>`
+}
+
 //Start Quiz function
 function startQuiz(){
     difficultyScreen.style.display = 'none'
@@ -124,6 +131,7 @@ function startQuiz(){
     knowledgeCheck.style.display = 'none'
     renderQuestion(); // Call on the function Render Question to display on screen
     qContainer.className ='unhidden' // Make questions visible
+    changeStatus()
     showTimer()
     timer = setInterval(showTimer,1000); // run function every second
 }
@@ -133,6 +141,7 @@ function checkAnswer(clickedAnswer){
         console.log('Correct!')
         score++
         questionNumber++
+        changeStatus()
     } else {
         console.log('Incorrect')
     } 
@@ -182,6 +191,8 @@ function changeTimerColor(){
  function showProgress(){
     qProgress.textContent = 'Question ' + questionNumber + ' of ' + shuffledQuestions.length
  }
+
+
 
 /* REFRESH PAGE */
 function refreshPage(){
