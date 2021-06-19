@@ -191,9 +191,11 @@ Each score range is broken down into different **IF** statements. Each range add
 # FUTURE CONSIDERATIONS
 * Add Reset Button.
 * Add a count down instead of count up.
-* Add a Progress Bar.
-* Add a current score to screen
-* Fix media queries to make game mobile compatible.
+* Add a Progress Bar. Currently have progress text.
+* Bug: If player answers too quickly, the question number status gets stuck (" Question {# becomes stuck} of 10 ")
+* ~~Fix media queries to make game mobile compatible.~~ Fixed!
 
 # Change Log
 - [X] (6/15/2021) Added difficulty selection screen. Player can now choose Easy, Medium, or Hard modes, displaying 10, 25, or 50 questions, respectively.
+- [x] (6/19/2021) Added Progress Text. Shows correct and incorrectly answered questions to the player. I will replace this with a progress bar eventually.
+- [ ] (6/19/2021) Fixed media queries. Works for most popular phones
