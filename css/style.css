@@ -26,8 +26,7 @@ h1{
 }
 
 #quiz-container{
-    position: relative;
-    
+    position: relative;   
 }
 
 header{
@@ -76,6 +75,12 @@ header{
   color: blue;
   font-weight: 600;
 }
+
+.red-text{
+  color:red;
+  font-weight: 600;
+}
+
 
 .hidden{
     display: none;
@@ -142,6 +147,7 @@ header{
 
 #progress{
     font-size: 1.5rem;
+    margin: 10px auto;
 }
 .refresh-page{
     font-size: 2.0rem;
@@ -154,6 +160,31 @@ header{
 }
 .github-icon{
   width: 16px;
+}
+
+.title-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* outline: 2px solid green; */
+}
+
+.title-container__img--left{
+  width:70px;
+  margin-right: 10px;
+  padding-top: 5px;
+}
+
+.title-container__img--right{
+  width: 70px;
+  margin-left: 10px;
+  padding-top: 5px;
+  
+}
+
+.title-container__title{
+  /* outline: 2px solid orange; */
+  position: relative;
 }
 
 footer{
@@ -169,6 +200,7 @@ footer{
 
     h1{
         font-size: 3rem;
+        margin: 5px 0px 5px 0px;
     }
 
     h3{
@@ -185,8 +217,11 @@ footer{
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-
     }
+    .title-container{
+      margin-top: 5px;
+    }
+
     #answers-container > div{
         margin-right: 0px !important;
         margin-bottom: 15px;
@@ -196,6 +231,8 @@ footer{
     }
     #game-over{
         padding:55px 0px 100px 0px;
+        font-size:2.8rem;
+        top:2%;
     }
     .eagle{
         height: 60px;
@@ -214,32 +251,51 @@ footer{
         font-size: 1.5rem;
     }
 
-    #game-over{
-        font-size:2.8rem;
-    }
     .refresh-page{
         font-size:2rem !important;
     }
 
   }
-  @media only screen and (max-width:399px){
+  @media only screen and (max-width:499px){
     h1{
           font-size: 2.8rem;
+          margin:5px 0px 5px 0px;
         }
     h3{
         font-size: 1rem;
     }
+
+    #quiz-container{
+     top: -30px 
+  }
+
+    .title-container{
+      flex-direction: column;
+    }
+    .title-container__img--left{
+      width: 50px;
+    }
+
+
+    .title-container__img--right{
+      display: none;
+    }
+    .question-line{
+      margin:5px 0px 20px 0px
+    }
+    
     #start-button{
         font-size: 2.8rem;
         padding:40px;
     }
 
     #choose-difficulty{
-      justify-content: space-around !important;
+      justify-content: space-between !important;
+      flex-direction: column;
+      height: 250px;
     }
     #easy,#medium,#hard{
-      border: black 1px solid;
-      font-size: 1rem;
+      font-size: 1.6rem;
       margin-right: 0px;
       padding: 5px;
       border-radius: 10px;
@@ -253,13 +309,15 @@ footer{
     }
 
     #questions-div{
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     #timer-div{
         font-size: 1.4srem;
     }
     #game-over{
-        padding: 40px 0px 90px 0px;
+      padding: 100px 0px 100px 0px;
+      top: 10px;
+      height: 85%;
      }
      .refresh-page{
         font-size: 1.5rem !important;
@@ -278,6 +336,24 @@ footer{
     h1{
         font-size:2.4rem;
     }
+    .container{
+      margin-top: 5px;
+    }
+
+    #choose-difficulty{
+      justify-content: space-between !important;
+      flex-flow: column;
+      height: 225px;
+    }
+
+    #easy, #medium, #hard{
+      font-size: 1.4rem;
+      margin-right: 0px;
+      padding: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
     #questions-div{
         font-size: 1.2rem;
     }
@@ -292,5 +368,10 @@ footer{
         font-size: 1.2rem; 
     }
     
+    footer{
+      margin-top:15px;
+      font-size: .9rem;
+    }
+
     }
     

@@ -74,6 +74,8 @@ let timerDiv = document.querySelector('#timer-div')
 let gameOverDiv = document.querySelector('#game-over')
 let knowledgeCheck = document.querySelector('#knowledge-check')
 let statusContainer = document.querySelector('#status-container')
+let americanFlag = document.querySelector('title-container__img--left')
+
 
 /* Difficulty screen variables */
 const difficultyScreen = document.getElementById('choose-difficulty')
@@ -85,6 +87,7 @@ const hardMode = document.getElementById('hard')
 
 let timer;
 let score = 0; // Items correct
+let incorrectQuestions = 0
 let qTimeCounter = 10; // Seconds for each question
 let count = 0 // place holder for each second that passes
 let questionNumber = 1
@@ -113,7 +116,7 @@ function hardModeQuestions(questions){
 
 function renderQuestion(){
    let q = shuffledQuestions[currentQuestionIndex]
-    qDiv.innerHTML = `<p>${q.question}</p>`;
+    qDiv.innerHTML = `<p class="question-line">${q.question}</p>`;
     qAnswer1.innerHTML = `<p>${q.capital1}</p>`
     qAnswer2.innerHTML = `<p>${q.capital2}</p>`
     qAnswer3.innerHTML = `<p>${q.capital3}</p>`
@@ -121,7 +124,7 @@ function renderQuestion(){
 }
 
 function changeStatus(){
-  statusContainer.innerHTML = `<p>You currently have <span class="blue-text">${score}</span> correct</p>`
+  statusContainer.innerHTML = `<p><span class="blue-text">${score} </span>Correct | <span class="red-text">${incorrectQuestions ? incorrectQuestions : 0} Incorrect</span></p>`
 }
 
 //Start Quiz function
@@ -144,6 +147,8 @@ function checkAnswer(clickedAnswer){
         changeStatus()
     } else {
         console.log('Incorrect')
+        incorrectQuestions++
+        changeStatus()
     } 
     count = 0
     if (currentQuestionIndex < finalQuestionIndex){
@@ -203,8 +208,6 @@ function refreshPage(){
  function gameOverScreen(){
     gameOverDiv.style.display = "block";
     const scorePercent = Math.round(100 * score/shuffledQuestions.length)
-    /* gameOverDiv.innerHTML = `Quiz Complete`
-    gameOverDiv.innerHTML += `<br \>` */
     console.log(scorePercent)
     if (scorePercent <= 50){
         gameOverDiv.innerHTML += `<img src=./img/Mighty_Eagle_sm.png id='mighty-eagle'>`
